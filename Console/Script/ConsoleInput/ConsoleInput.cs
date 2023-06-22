@@ -3,8 +3,7 @@ using UnityEngine;
 
 namespace ConsoleUtility
 {
-    public abstract class ConsoleInput : MonoBehaviour
-    {
+    public abstract class ConsoleInput : MonoBehaviour {
         public abstract bool toggle { get; }
         public abstract bool cycleView { get; }
         public abstract bool previousCommand { get; }

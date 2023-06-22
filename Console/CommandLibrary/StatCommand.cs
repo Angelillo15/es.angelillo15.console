@@ -2,11 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace ConsoleUtility
-{
+namespace ConsoleUtility {
     [AutoRegisterConsoleCommand]
-    public class StatCommand : IConsoleCommand
-    {
+    public class StatCommand : IConsoleCommand {
         public string name => "stat";
 
         public string summary => "Display Statistics about current game session";
@@ -15,17 +13,15 @@ namespace ConsoleUtility
 
         public IEnumerable<Console.Alias> aliases => null;
 
-        public void Execute(string[] args)
-        {
+        public void Execute(string[] args) {
             Console.RegisterView<StatView>();
         }
 
-        class StatView : View
-        {
-            public StatView() : base(15f) { }
+        class StatView : View {
+            public StatView() : base(15f) {
+            }
 
-            public override string GetDebugViewString()
-            {
+            public override string GetDebugViewString() {
                 return $@"
     Current Scene: {UnityEngine.SceneManagement.SceneManager.GetActiveScene().name}
 

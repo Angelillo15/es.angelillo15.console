@@ -1,11 +1,7 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-namespace ConsoleUtility
-{
-    static class ConsoleUtility
-    {
+namespace ConsoleUtility {
+    static class ConsoleUtility {
         const string kDefaultPrefix = "Default_";
 #if ENABLE_LEGACY_INPUT_MANAGER
         const string kPrefabName = "Console_LegacyInput";
@@ -13,14 +9,12 @@ namespace ConsoleUtility
         const string kPrefabName = "Console_NewInputSystem";
 #endif
         [RuntimeInitializeOnLoadMethod]
-        static void CreateConsole()
-        {
+        static void CreateConsole() {
             GameObject prefab = Resources.Load<GameObject>(kPrefabName);
             if (prefab == null)
-                prefab = Resources.Load<GameObject>(kDefaultPrefix+kPrefabName);
+                prefab = Resources.Load<GameObject>(kDefaultPrefix + kPrefabName);
 
-            if(prefab == null)
-            {
+            if (prefab == null) {
                 Debug.LogWarning("Could not load Console: Prefab not found");
                 return;
             }
@@ -28,8 +22,6 @@ namespace ConsoleUtility
             GameObject instance = GameObject.Instantiate(prefab);
             instance.name = "Console";
             GameObject.DontDestroyOnLoad(instance);
-            
         }
     }
 }
-

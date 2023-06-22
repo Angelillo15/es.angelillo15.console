@@ -5,7 +5,7 @@ namespace ConsoleUtility
 {
     public class LegacyConsoleInput : ConsoleInput
     {
-        public KeyCode ToggleKey = KeyCode.Backslash;
+        public KeyCode ToggleKey = KeyCode.F1;
         public KeyCode CycleViewKey = KeyCode.Tab;
         public KeyCode PreviousCommandKey = KeyCode.UpArrow;
         public KeyCode NextCommandKey = KeyCode.DownArrow;
